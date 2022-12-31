@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="icons/32x32">
+    <file>gnome-icon-theme_2.24.0-1_win32/share/icons/gnome/32x32/all/empty.png</file>
+    <file>gnome-icon-theme_2.24.0-1_win32/share/icons/gnome/32x32/all/computer.png</file>
+    <file>gnome-icon-theme_2.24.0-1_win32/share/icons/gnome/32x32/all/connect_established.png</file>
+    <file>gnome-icon-theme_2.24.0-1_win32/share/icons/gnome/32x32/all/accessories-text-editor.png</file>
+    <file>gnome-icon-theme_2.24.0-1_win32/share/icons/gnome/32x32/all/list-add.png</file>
+    <file>gnome-icon-theme_2.24.0-1_win32/share/icons/gnome/32x32/all/stock_delete.png</file>
+    <file>gnome-icon-theme_2.24.0-1_win32/share/icons/gnome/32x32/all/add.png</file>
+    <file>gnome-icon-theme_2.24.0-1_win32/share/icons/gnome/32x32/all/go-first.png</file>
+    <file>gnome-icon-theme_2.24.0-1_win32/share/icons/gnome/32x32/all/go-home.png</file>
+    <file>gnome-icon-theme_2.24.0-1_win32/share/icons/gnome/32x32/all/go-last.png</file>
+    <file>gnome-icon-theme_2.24.0-1_win32/share/icons/gnome/32x32/all/go-next.png</file>
+    <file>gnome-icon-theme_2.24.0-1_win32/share/icons/gnome/32x32/all/go-previous.png</file>
+  </qresource>
+</RCC>

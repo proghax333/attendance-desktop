@@ -1,0 +1,16 @@
+<RCC>
+  <qresource prefix="/">
+    <file>icons/32x32/connect_established.png</file>
+    <file>icons/32x32/empty.png</file>
+    <file>icons/32x32/computer.png</file>
+    <file>icons/32x32/accessories-text-editor.png</file>
+    <file>icons/32x32/stock_delete.png</file>
+    <file>icons/32x32/list-add.png</file>
+    <file>icons/32x32/go-previous.png</file>
+    <file>icons/32x32/go-next.png</file>
+    <file>icons/32x32/go-last.png</file>
+    <file>icons/32x32/go-home.png</file>
+    <file>icons/32x32/go-first.png</file>
+    <file>icons/32x32/add.png</file>
+  </qresource>
+</RCC>
