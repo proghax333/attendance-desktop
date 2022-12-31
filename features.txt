@@ -1,0 +1,57 @@
+Take thumb data from biometric machine.
+  - you get id number from the biometric machine.
+  - Link id number with student/employee profile.
+
+Employees details:
+  Id
+  Name
+  Company - cscoe
+  Department - cse, ee, mech, and other depts.
+  Year, class, division
+  Gender
+  Status - current, passout
+  (This is the bibliography)
+
+Import employee data directly from excel(xlsx, csv, xls) (join via id)
+
+Backup
+
+Attendance report:
+  Daily
+  Monthly
+  Yearly
+  Graph - by class, year, gender, etc.
+
+
+
+Punches (in time, out time pair)
+  For punches with no "out punches", don't show duration of stay.
+
+Attendance display:
+  - present, not present
+  - filter by department
+  - year
+
+Employee details
+  - date of admission
+  - date of leaving
+
+Tables:
+
+devices
+id name ip port type
+
+departments
+id name
+
+members
+id
+
+classes
+id name
+
+divisions
+id name 
+
+admissions
+id member_id class_id division_id

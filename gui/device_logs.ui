@@ -296,7 +296,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="lineEdit"/>
+             <widget class="QLineEdit" name="inputEmployeeCode"/>
             </item>
             <item>
              <widget class="QLabel" name="label_5">

@@ -54,20 +54,10 @@ class DeviceLogsWindow(QWidget, UI_DeviceLogsWindow):
 
     self.load_data()
 
-    # tableLoader = Runner(self.load_data)
-    # self.thread = QThread()
+  #   self.inputEmployeeCode.changed.connect(self.handleEmployeeCodeChange)
 
-    # self.thread.finished.connect(lambda: print("Done!!"))
-    # self.thread.started.connect(tableLoader.run)
-
-    # tableLoader.moveToThread(self.thread)
-    # self.thread.start()
-
-    # Load data from db into the table
-    # tableLoader = Runner(self.load_data)
-    # pool = QThreadPool.globalInstance()
-    # pool.start(tableLoader)
-
+  # def handleEmployeeCodeChange(self):
+  #   print(self.inputEmployeeCode)
     
   def load_data(self):
     con = sqlite3.connect("contacts.db")
