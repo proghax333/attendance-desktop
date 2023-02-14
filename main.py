@@ -1,4 +1,4 @@
 
-import modules.start as app
+import modules.app as app
 
 app.start()
