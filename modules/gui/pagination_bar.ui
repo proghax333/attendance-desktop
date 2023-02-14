@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>938</width>
+    <height>24</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QToolButton" name="buttonFirst">
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../resources/main.qrc">
+       <normaloff>:/icons/32x32/go-first.png</normaloff>:/icons/32x32/go-first.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QToolButton" name="buttonPrevious">
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../resources/main.qrc">
+       <normaloff>:/icons/32x32/go-previous.png</normaloff>:/icons/32x32/go-previous.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="inputCurrentPage">
+     <property name="maximumSize">
+      <size>
+       <width>40</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelOf">
+     <property name="text">
+      <string>of</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelTotalPages">
+     <property name="text">
+      <string>1024</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QToolButton" name="buttonNext">
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../resources/main.qrc">
+       <normaloff>:/icons/32x32/go-next.png</normaloff>:/icons/32x32/go-next.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QToolButton" name="buttonLast">
+     <property name="text">
+      <string>...</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../resources/main.qrc">
+       <normaloff>:/icons/32x32/go-last.png</normaloff>:/icons/32x32/go-last.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="buttonAdd">
+     <property name="text">
+      <string>Add New</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../resources/main.qrc">
+       <normaloff>:/icons/32x32/add.png</normaloff>:/icons/32x32/add.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="buttonEdit">
+     <property name="maximumSize">
+      <size>
+       <width>60</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>Edit</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../resources/main.qrc">
+       <normaloff>:/icons/32x32/accessories-text-editor.png</normaloff>:/icons/32x32/accessories-text-editor.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="buttonDelete">
+     <property name="text">
+      <string>Delete</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../resources/main.qrc">
+       <normaloff>:/icons/32x32/stock_delete.png</normaloff>:/icons/32x32/stock_delete.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_6">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>30</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="labelPerPage">
+     <property name="text">
+      <string>Records per page</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="comboBoxPerPage">
+     <property name="currentText">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="horizontalSpacer_5">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>15</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resources/main.qrc"/>
+ </resources>
+ <connections/>
+</ui>

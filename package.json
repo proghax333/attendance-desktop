@@ -1,0 +1,24 @@
+{
+  "name": "attendance",
+  "version": "1.0.0",
+  "description": "### Generate UI + Start App",
+  "main": "index.js",
+  "scripts": {
+    "designer:dev": "pyqt5-tools designer & npm run watch",
+    "watch": "nodemon --watch gui -e \"ui\" --exec \"python generate-ui.py\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/proghax333/attendance-desktop.git"
+  },
+  "keywords": [],
+  "author": "proghax333",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/proghax333/attendance-desktop/issues"
+  },
+  "homepage": "https://github.com/proghax333/attendance-desktop#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

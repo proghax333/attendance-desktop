@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>877</width>
-    <height>558</height>
+    <width>715</width>
+    <height>335</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -144,7 +144,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>877</width>
+     <width>715</width>
      <height>21</height>
     </rect>
    </property>
@@ -176,6 +176,9 @@
     <property name="title">
      <string>Reports</string>
     </property>
+    <addaction name="actionDaily_Report"/>
+    <addaction name="actionMonthly_Report"/>
+    <addaction name="actionYearly_Report"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -274,6 +277,21 @@
   <action name="actionRoles">
    <property name="text">
     <string>Roles</string>
+   </property>
+  </action>
+  <action name="actionDaily_Report">
+   <property name="text">
+    <string>Daily Report</string>
+   </property>
+  </action>
+  <action name="actionMonthly_Report">
+   <property name="text">
+    <string>Monthly Report</string>
+   </property>
+  </action>
+  <action name="actionYearly_Report">
+   <property name="text">
+    <string>Yearly Report</string>
    </property>
   </action>
  </widget>

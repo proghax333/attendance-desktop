@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/atmanand/Projects/AcademicsCSE/College/Attendance/gui/main_window.ui'
+# Form implementation generated from reading ui file '/home/atmanand/Projects/AcademicsCSE/College/Attendance/modules/gui/main_window.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(877, 558)
+        MainWindow.resize(715, 335)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
@@ -74,7 +74,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addLayout(self.statusBar, 2, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 877, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 715, 21))
         self.menubar.setObjectName("menubar")
         self.menuAdmin = QtWidgets.QMenu(self.menubar)
         self.menuAdmin.setObjectName("menuAdmin")
@@ -120,10 +120,19 @@ class Ui_MainWindow(object):
         self.actionCategories.setObjectName("actionCategories")
         self.actionRoles = QtWidgets.QAction(MainWindow)
         self.actionRoles.setObjectName("actionRoles")
+        self.actionDaily_Report = QtWidgets.QAction(MainWindow)
+        self.actionDaily_Report.setObjectName("actionDaily_Report")
+        self.actionMonthly_Report = QtWidgets.QAction(MainWindow)
+        self.actionMonthly_Report.setObjectName("actionMonthly_Report")
+        self.actionYearly_Report = QtWidgets.QAction(MainWindow)
+        self.actionYearly_Report.setObjectName("actionYearly_Report")
         self.menuManage.addAction(self.actionDepartments)
         self.menuManage.addAction(self.actionMembers)
         self.menuManage.addAction(self.actionCategories)
         self.menuManage.addAction(self.actionRoles)
+        self.menuReports.addAction(self.actionDaily_Report)
+        self.menuReports.addAction(self.actionMonthly_Report)
+        self.menuReports.addAction(self.actionYearly_Report)
         self.menubar.addAction(self.menuAdmin.menuAction())
         self.menubar.addAction(self.menuManage.menuAction())
         self.menubar.addAction(self.menuDevices.menuAction())
@@ -164,4 +173,7 @@ class Ui_MainWindow(object):
         self.actionMembers.setText(_translate("MainWindow", "Members"))
         self.actionCategories.setText(_translate("MainWindow", "Categories"))
         self.actionRoles.setText(_translate("MainWindow", "Roles"))
+        self.actionDaily_Report.setText(_translate("MainWindow", "Daily Report"))
+        self.actionMonthly_Report.setText(_translate("MainWindow", "Monthly Report"))
+        self.actionYearly_Report.setText(_translate("MainWindow", "Yearly Report"))
 from . import main_rc
