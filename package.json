@@ -4,7 +4,8 @@
   "description": "### Generate UI + Start App",
   "main": "index.js",
   "scripts": {
-    "designer:dev": "pyqt5-tools designer & npm run watch",
+    "build": "pyinstaller --name=\"AttendanceApp\" --windowed --onefile main.py",
+    "designer:watch": "pyqt5-tools designer & npm run watch",
     "watch": "nodemon --watch gui -e \"ui\" --exec \"python generate-ui.py\""
   },
   "repository": {
