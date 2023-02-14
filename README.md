@@ -1,7 +1,13 @@
 ## Important Commands
 
-### Generate UI + Start App
+#### Install npm packages
 
 ```bash
-python generate-ui.py && python main.py
+npm install
+```
+
+#### Start development mode
+
+```bash
+npm run dev
 ```
