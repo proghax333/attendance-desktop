@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/">
+    <file>icons/32x32/stock_person.png</file>
     <file>icons/32x32/connect_established.png</file>
     <file>icons/32x32/empty.png</file>
     <file>icons/32x32/computer.png</file>

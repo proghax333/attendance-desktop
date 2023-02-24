@@ -6,7 +6,7 @@
   "scripts": {
     "build": "pyinstaller --name=\"AttendanceApp\" --windowed --onefile main.py",
     "designer:watch": "pyqt5-tools designer & npm run watch",
-    "watch": "nodemon --watch gui -e \"ui\" --exec \"python generate-ui.py\""
+    "watch": "nodemon --watch modules/gui -e \"ui\" --exec \"python generate-ui.py\""
   },
   "repository": {
     "type": "git",

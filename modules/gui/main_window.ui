@@ -157,10 +157,10 @@
     <property name="title">
      <string>Manage</string>
     </property>
-    <addaction name="actionDepartments"/>
-    <addaction name="actionMembers"/>
-    <addaction name="actionCategories"/>
-    <addaction name="actionRoles"/>
+    <addaction name="actionManageDepartments"/>
+    <addaction name="actionManageMembers"/>
+    <addaction name="actionManageCategories"/>
+    <addaction name="actionManageRoles"/>
    </widget>
    <widget class="QMenu" name="menuDevices">
     <property name="title">
@@ -205,6 +205,7 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionMembers"/>
    <addaction name="actionDepartment"/>
   </widget>
   <widget class="QToolBar" name="toolBar_2">
@@ -229,7 +230,7 @@
      <normaloff>:/icons/32x32/go-home.png</normaloff>:/icons/32x32/go-home.png</iconset>
    </property>
    <property name="text">
-    <string>Departments</string>
+    <string>Department</string>
    </property>
    <property name="toolTip">
     <string>Manage departments</string>
@@ -259,22 +260,22 @@
     <string>Manage devices</string>
    </property>
   </action>
-  <action name="actionDepartments">
+  <action name="actionManageDepartments">
    <property name="text">
     <string>Departments</string>
    </property>
   </action>
-  <action name="actionMembers">
+  <action name="actionManageMembers">
    <property name="text">
     <string>Members</string>
    </property>
   </action>
-  <action name="actionCategories">
+  <action name="actionManageCategories">
    <property name="text">
     <string>Categories</string>
    </property>
   </action>
-  <action name="actionRoles">
+  <action name="actionManageRoles">
    <property name="text">
     <string>Roles</string>
    </property>
@@ -292,6 +293,18 @@
   <action name="actionYearly_Report">
    <property name="text">
     <string>Yearly Report</string>
+   </property>
+  </action>
+  <action name="actionMembers">
+   <property name="icon">
+    <iconset resource="../resources/main.qrc">
+     <normaloff>:/icons/32x32/stock_person.png</normaloff>:/icons/32x32/stock_person.png</iconset>
+   </property>
+   <property name="text">
+    <string>Members</string>
+   </property>
+   <property name="toolTip">
+    <string>Manage members</string>
    </property>
   </action>
  </widget>
