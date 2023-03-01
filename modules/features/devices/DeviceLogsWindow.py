@@ -17,13 +17,25 @@ class DeviceLogsWindow(QWidget, UI_DeviceLogsWindow):
       .setAddButtonText("Assign Employee Manual Entries") \
       .setEditButtonText("Edit") \
       .setDeleteButtonText("Delete all selected records")
+    
+    def onPageChange(options):
+      print("query: ", self.paginationBar.getSqlQuery())
+
+      AsyncTask.runTask(
+        self.load_data,
+        self.on_load_data
+      )
+
+      pass
+
+    self.paginationBar.changed.connect(onPageChange)
 
     self.gridLayout.addWidget(self.paginationBar, 3, 0, 1, 1)
 
-    self.dataLoadTask = AsyncTask(self.load_data)
-    self.dataLoadTask.finished.connect(self.on_load_data)
-    self.dataLoadTask.start()
-
+    AsyncTask.runTask(
+      self.load_data,
+      self.on_load_data
+    )
   #   self.inputEmployeeCode.changed.connect(self.handleEmployeeCodeChange)
 
   # def handleEmployeeCodeChange(self):
@@ -32,15 +44,34 @@ class DeviceLogsWindow(QWidget, UI_DeviceLogsWindow):
   def load_data(self):
     con = sqlite3.connect("contacts.db")
 
+    queryCount = con.cursor()
+    sqlCount = "select count(id) from contacts";
+    queryCount.execute(sqlCount)
+    totalRecords, = queryCount.fetchall()[0]
+
+    print("total records: ", totalRecords)
+
     query = con.cursor()
-    query.execute("select * from contacts;")
+    sql = f"select * from contacts {self.paginationBar.getSqlQuery()}"
+    print("Data query: ", sql)
+    query.execute(sql)
 
     data = query.fetchall()
     
     con.close()
 
-    return data
+    return data, totalRecords
   
-  def on_load_data(self, data):
+  def on_load_data(self, values):
+    data, total = values
+
     self.model = SimpleTableModel(data)
     self.table.setModel(self.model)
+    
+    self.paginationBar.options["itemsCount"] = total
+
+    # self.paginationBar.onChangeCurrentPage(lambda value: print("Current page changed: ", value))
+
+    # # self.paginationBar.onFirst(lambda: print("First button was clicked"))
+    # self.paginationBar.onChangePerPage(lambda value: print("Per page changed: ", value))
+

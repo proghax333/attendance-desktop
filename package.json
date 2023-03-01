@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "pyinstaller --name=\"AttendanceApp\" --windowed --onefile main.py",
-    "designer:watch": "pyqt5-tools designer & npm run watch",
+    "designer": "pyqt5-tools designer",
+    "designer:watch": "npm run designer & npm run watch",
     "watch": "nodemon --watch modules/gui -e \"ui\" --exec \"python generate-ui.py\""
   },
   "repository": {

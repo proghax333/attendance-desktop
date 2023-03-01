@@ -1,4 +1,5 @@
 
+from PyQt5 import QtCore
 from PyQt5.QtCore import pyqtSignal
 from PyQt5.QtCore import QThread, QObject, QRunnable, QThreadPool
 
@@ -40,5 +41,36 @@ class AsyncTask(QObject):
     self.worker.finished.connect(self.worker.deleteLater)
     self.thread.finished.connect(self.thread.deleteLater)
   
+  
+  def runTask(task, on_finished):
+    # QThreadPool is observed to be a stable system for managing
+    # asynchronous tasks.
+    # QThread pool needs to be used instead of this manual dictionary-based
+    # thread object management.
+    # The current implementation leads to memory leaks as the
+    # dictionary objects are not being freed.
+
+    AsyncTask.state["counter"] += 1
+    threadId = AsyncTask.state["counter"]
+    currentThread = QtCore.QThread.currentThread()
+
+    dataLoadTask = AsyncTask(task)
+
+    def on_task_finished(data):
+      on_finished(data)
+      # dataLoadTask.worker.moveToThread(currentThread)
+
+    AsyncTask.state["tasks"][threadId] = dataLoadTask
+
+    dataLoadTask.finished.connect(on_task_finished)
+    dataLoadTask.start()
+
+    # return dataLoadTask
+
   def start(self):
     return self.thread.start()
+
+AsyncTask.state = {
+  "tasks": {},
+  "counter": 0,
+}

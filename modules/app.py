@@ -16,7 +16,7 @@ def start():
 
   window = MainApplicationWindow(parent=None)
   window.show()
-  window.setWindowState(Qt.WindowState.WindowMaximized)
+  # window.setWindowState(Qt.WindowState.WindowMaximized)
 
   # window.load_data()
 
