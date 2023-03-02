@@ -8,7 +8,6 @@ from modules.generated.pagination_bar_ui import Ui_Form as UI_PaginationBar
 
 class PaginationBar(QWidget, UI_PaginationBar):
   changed = pyqtSignal(object)
-
   def __init__(self, *args, **kwargs):
     super().__init__(*args, **kwargs)
     self.setupUi(self)
@@ -16,7 +15,7 @@ class PaginationBar(QWidget, UI_PaginationBar):
     # Default texts
     self.setAddButtonText("Add New") \
       .setEditButtonText("Edit") \
-      .setEditButtonText("Delete")
+      .setDeleteButtonText("Delete")
     
 
     self.comboBoxPerPage.addItem("All", "all")
@@ -103,7 +102,6 @@ class PaginationBar(QWidget, UI_PaginationBar):
 
 
   def getSqlQuery(self):
-    totalPages = self.totalPages()
     currentPage = self.currentPage() - 1
     itemsPerPage = self.itemsPerPage()
 
@@ -114,6 +112,21 @@ class PaginationBar(QWidget, UI_PaginationBar):
       return f"LIMIT {limit} OFFSET {offset}"
     
     return ""
+
+  def getSqlOptions(self):
+    currentPage = self.currentPage() - 1
+    itemsPerPage = self.itemsPerPage()
+
+    if (itemsPerPage != "all"):
+      limit = itemsPerPage
+      offset = currentPage * itemsPerPage
+
+      return {
+        "limit": limit,
+        "offset": offset
+      }
+    
+    return {}
 
   def emitChange(self):
     self.changed.emit(self.options)

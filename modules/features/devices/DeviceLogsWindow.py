@@ -8,6 +8,10 @@ from modules.generated.device_logs_ui import Ui_Form as UI_DeviceLogsWindow
 from modules.utils.Task import AsyncTask
 from modules.models.SimpleTableModel import SimpleTableModel
 
+from pypika import Query, Table, Field, Parameter, functions as fn
+from operator import itemgetter
+from modules.models import query, contacts
+
 class DeviceLogsWindow(QWidget, UI_DeviceLogsWindow):
   def __init__(self, *args, **kwargs):
     super().__init__(*args, **kwargs)
@@ -19,14 +23,10 @@ class DeviceLogsWindow(QWidget, UI_DeviceLogsWindow):
       .setDeleteButtonText("Delete all selected records")
     
     def onPageChange(options):
-      print("query: ", self.paginationBar.getSqlQuery())
-
       AsyncTask.runTask(
         self.load_data,
         self.on_load_data
       )
-
-      pass
 
     self.paginationBar.changed.connect(onPageChange)
 
@@ -42,23 +42,35 @@ class DeviceLogsWindow(QWidget, UI_DeviceLogsWindow):
   #   print(self.inputEmployeeCode)
     
   def load_data(self):
-    con = sqlite3.connect("contacts.db")
+    connection = sqlite3.connect("contacts.db")
 
-    queryCount = con.cursor()
-    sqlCount = "select count(id) from contacts";
-    queryCount.execute(sqlCount)
-    totalRecords, = queryCount.fetchall()[0]
+    queryCount = Query \
+      .from_(contacts) \
+      .select(fn.AggregateFunction("count", "id").as_("totalRows")) \
+      .get_sql()
+    # print("count query: ", queryCount)
 
-    print("total records: ", totalRecords)
+    rowsCount = itemgetter("rows") \
+      (query(connection, queryCount))
 
-    query = con.cursor()
-    sql = f"select * from contacts {self.paginationBar.getSqlQuery()}"
-    print("Data query: ", sql)
-    query.execute(sql)
-
-    data = query.fetchall()
+    queryContacts = Query \
+      .from_(contacts) \
+      .select("id", "name", "job", "email") \
     
-    con.close()
+    # Pagination
+    paginationOptions = self.paginationBar.getSqlOptions()
+    if ("limit" in paginationOptions):
+      queryContacts = queryContacts \
+        .limit(paginationOptions["limit"]) \
+        .offset(paginationOptions["offset"])
+
+    queryContacts = queryContacts.get_sql()
+    # print("contact query: ", queryContacts)
+    
+    rowsContacts, _ = itemgetter("rows", "count") \
+      (query(connection, queryContacts))
+
+    data, totalRecords = rowsContacts, rowsCount[0][0]
 
     return data, totalRecords
   

@@ -22,13 +22,13 @@ class MainApplicationWindow(QMainWindow, Ui_MainWindow):
       )
     )
 
-    self.actionDeviceLogs.trigger()
-    
     self.actionDevices.triggered.connect(
       lambda: self.showWindow(
         lambda parent: DevicesWindow(parent=parent)
       )
     )
+    self.actionDevices.trigger()
+    # self.actionDeviceLogs.trigger()
 
 
     # Manage
